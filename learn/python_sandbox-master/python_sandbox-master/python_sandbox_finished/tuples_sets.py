@@ -13,7 +13,7 @@ fruits2 = ('Apples',)
 print(fruits[1])
 
 # Can't change value
-fruits[0] = 'Pears'
+#fruits[0] = 'Pears'
 
 # Delete tuple
 del fruits2
