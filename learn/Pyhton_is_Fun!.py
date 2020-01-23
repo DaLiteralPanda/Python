@@ -10,3 +10,10 @@ def big_num():
     print(int("".join(str_num_list)))
 
 # Create a Python function that will replace any bad language with the word "beep"
+from profinaty-check import predict
+
+sentence = input("Type a sentence :- ")
+
+for word in sentence:
+    if predict(word) == 1:
+        replace(word, beep)
