@@ -5,7 +5,7 @@ x = np.linspace(1,10,num=10)
 print(x.shape)
 print(x)
 
-#2D
+# 2D
 print(x.reshape(5,2))
 # The first one is the rows second one is the columns
 # So to do 5 rows and 2 columns you will need to divide 10 by 2 to get 5 and then 2 columns
