@@ -10,7 +10,6 @@ print(x.reshape(5,2))
 # The first one is the rows second one is the columns
 # So to do 5 rows and 2 columns you will need to divide 10 by 2 to get 5 and then 2 columns
 print(type(x))
-
 # Create a list and transform it into a matrix
 my_list = [i for i in range(15)]
 my_list = np.array(my_list).reshape(5,3)
