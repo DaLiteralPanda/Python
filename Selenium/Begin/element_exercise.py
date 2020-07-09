@@ -7,8 +7,8 @@ input2_css_locator = "input[id='ipt2']"
 button4_xpath_locator = "//button[@id='b4']"
 
 # Assign Element
-input2_elem = browser.find_element_by_css_selector(input2_css_locator)
-butn4_elem = browser.find_element_by_xpath(button4_xpath_locator)
+input2_elem = browser.find_element_by_css_selector(input2_css_locator) #css selector
+butn4_elem = browser.find_element_by_xpath(button4_xpath_locator) #xpath
 
 # Manipluate Elements
 input2_elem.send_keys("Test text")
