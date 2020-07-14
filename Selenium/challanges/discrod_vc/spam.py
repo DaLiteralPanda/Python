@@ -13,17 +13,17 @@ password.send_keys(getpass(prompt="Type in your password"))
 login_button = browser.find_element_by_css_selector("button[type='submit']")
 login_button.click()
 
-server = "a[aria-label='VC_SPAM!']"
+server = "a[aria-label='Tech World']"
 server_elem = browser.find_element_by_css_selector(server)
 server_elem.click()
 
-vc = "//div[@class='content-3at_AU']/div[text()='General']"
+vc = "//div[text()='General vc']"
 vc_elem = browser.find_element_by_xpath(vc)
 
 vc_mute = "//button[@aria-label='Deafen']"
 vc_mute_elem = browser.find_element_by_xpath(vc_mute)
 
 vc_elem.click()
-vc_mute_elem.click()
-for i in range(0,100):
+# vc_mute_elem.click()
+for i in range(0,30):
     vc_mute_elem.click()
