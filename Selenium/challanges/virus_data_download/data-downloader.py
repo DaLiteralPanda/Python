@@ -64,3 +64,5 @@ for i in range(0,5):
     next_page_btn_elem = browser.find_element_by_xpath(next_page_btn)
     next_page_btn_elem.click()
     sleep(10)
+
+browser.quit()
