@@ -13,7 +13,7 @@ password.send_keys(getpass(prompt="Type in your password:- "))
 login_button = browser.find_element_by_css_selector("button[type='submit']")
 login_button.click()
 
-# In Tech World Server
+# Going in the server
 server = "a[aria-label='Tech World']"
 server_elem = browser.find_element_by_css_selector(server)
 server_elem.click()
