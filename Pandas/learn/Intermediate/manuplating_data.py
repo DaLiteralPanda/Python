@@ -79,3 +79,21 @@ car_sales.dtypes
 # Removing a column
 car_sales = car_sales.drop("Total Fuel Used", axis=1)
 car_sales
+
+# Shuffling the dataset
+car_sales_shuffled = car_sales.sample(frac=1)
+# Shuffling a single column
+car_sales_shuffled["Colour"] = car_sales_shuffled["Colour"].sample(frac=1)
+car_sales_shuffled
+
+# Only select 20% of the data
+car_sales_shuffled.sample(frac=0.2)
+
+# Reset the shuffle
+car_sales_shuffled.reset_index(inplace=True, drop=True)
+car_sales_shuffled
+
+# How to apply a function to a column
+car_sales.head()
+car_sales["Odometer (KM)"] = car_sales["Odometer (KM)"].apply(lambda x: x/1.6)
+car_sales.head()
