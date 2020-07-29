@@ -32,3 +32,30 @@ fig, ax = plt.subplots()
 # Making a bar plot
 ax.bar(nut_butter.keys(), nut_butter.values());
 ax.set(title="Dan's Nut Butter Store", ylabel="Price ($)");
+
+# Horizantal Bar plot
+fig, ax = plt.subplots()
+ax.barh(list(nut_butter.keys()), list(nut_butter.values())); # For "barh" we have to turn the values into a list
+ax.set(title="Dan's Nut Butter Store", xlabel="Price ($)");
+
+# Histogram
+
+# Make some data
+x = np.random.randn(1000)
+fig, ax = plt.subplots()
+ax.hist(x);
+
+# Multiple plots happening at the same time
+
+### Two options for subplots
+
+# Option 1
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, figsize=(10, 5))
+# This makes 4 subplots
+# Plot to each different axis
+ax1.plot(x, x/2);
+ax2.scatter(np.random.random(10), np.random.random(10));
+ax3.bar(nut_butter.keys(), nut_butter.values());
+ax4.hist(np.random.randn(100));
+
+# Option 2
