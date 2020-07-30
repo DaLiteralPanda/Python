@@ -50,3 +50,14 @@ car_sales["Odometer (KM)"].plot(kind="hist");
 
 # Adjusting the bin size
 car_sales["Odometer (KM)"].plot.hist(bins=10);
+
+# Lets try another dataset
+heart_disease = pd.read_csv("./data/heart-disease.csv")
+heart_disease.head()
+
+# Create a Histogram of age
+heart_disease["age"].plot.hist(bins=10);
+
+heart_disease.head()
+heart_disease.plot.hist(figsize=(10, 30), subplots=True);
+# Not a good plot
