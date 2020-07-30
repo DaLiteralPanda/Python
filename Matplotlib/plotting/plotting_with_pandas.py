@@ -25,7 +25,28 @@ car_sales
 car_sales.plot(x="Sale Date", y="Total Sales");
 # Scatter Plot
 car_sales.plot(x="Odometer (KM)", y="Price", kind="scatter");
-# Bar Plot
+# Bar Plot (my expirement)
 car_sales.plot(x="Sale Date", y="Total Sales", kind="bar");
-# Hist Plot
+# Hist Plot (my expeiremnt)
 car_sales.plot(x="Make", y="Price", kind="hist");
+
+# How about a bar plot?
+x = np.random.rand(10, 4)
+x[:5]
+# Turn it into a dataframe
+df = pd.DataFrame(x, columns=['a', 'b', 'c', 'd'])
+df
+df.plot.bar();
+# Different way
+df.plot(kind="bar");
+
+# Plotting the csv (data)
+car_sales.plot(x="Make", y="Odometer (KM)", kind="bar");
+
+# How about Histograms?
+
+car_sales["Odometer (KM)"].plot.hist();
+car_sales["Odometer (KM)"].plot(kind="hist");
+
+# Adjusting the bin size
+car_sales["Odometer (KM)"].plot.hist(bins=10);
