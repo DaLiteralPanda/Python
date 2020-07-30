@@ -61,3 +61,10 @@ heart_disease["age"].plot.hist(bins=10);
 heart_disease.head()
 heart_disease.plot.hist(figsize=(10, 30), subplots=True);
 # Not a good plot
+
+### Which one to use? (pyplot vs matplotlib OO method)
+
+# When plotting something quickly, okay to use pyplot method
+# When plotting something more advanced use OO method
+
+##### OO = Object Oriented (oobviously lmaoo)
