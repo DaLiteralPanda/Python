@@ -68,3 +68,36 @@ heart_disease.plot.hist(figsize=(10, 30), subplots=True);
 # When plotting something more advanced use OO method
 
 ##### OO = Object Oriented (oobviously lmaoo)
+
+# OO Method
+over_50 = heart_disease[heart_disease["age"] > 50]
+len(over_50)
+
+# Scatter Plot
+
+# Pyplot method
+## We want the age and colestrol but we want to colour it with the flavous of the target column
+over_50.plot(kind="scatter", x='age', y='chol', c='target', figsize=(10, 6)); # c == colour
+# Not a good plot in this senario
+
+over_50.tail()
+
+# OO method mised with pyplot Method
+fig, ax = plt.subplots(figsize=(10, 6))
+over_50.plot(kind="scatter", x='age', y="chol", c="target", ax=ax);
+#ax.set_xlim([45, 100]);
+
+# OO method from scratch
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot the data
+scatter = ax.scatter(x=over_50["age"], y=over_50["chol"], c=over_50["target"]);
+
+# Customize it
+ax.set(title="Heart Disease and Cholesterol Levels", xlabel="Age", ylabel="Cholesterol");
+
+# Add a legend
+ax.legend(*scatter.legend_elements(), title="Target");
+
+# Add a horizantal line
+ax.axhline(over_50["chol"].mean(), linestyle='--');
