@@ -101,3 +101,24 @@ ax.legend(*scatter.legend_elements(), title="Target");
 
 # Add a horizantal line
 ax.axhline(over_50["chol"].mean(), linestyle='--');
+over_50.head()
+
+# Subplot of chol, age, thalach
+fig, (ax0, ax1) = plt.subplots(nrows=2, ncols=1, figsize=(10, 10));
+
+# Add data to ax0
+scatter = ax0.scatter(x=over_50["age"], y=over_50['chol'], c=over_50['target']);
+# Customise ax0
+ax0.set(title="Heart Disease and Cholesterol Levels", xlabel="Age", ylabel="Cholesterol");
+# Add a legend
+ax0.legend(*scatter.legend_elements(),  title='Target');
+# Add a mean line
+ax0.axhline(y=over_50['chol'].mean(), linestyle='--');
+# Add data to ax1
+scatter1 = ax1.scatter(x=over_50["age"], y=over_50['thalach'], c=over_50['target']);
+# Customise ax1
+ax1.set(title="Heart Disease and Heart Rate Levels", xlabel="Age", ylabel="Heart Rate");
+# Add a legend
+ax1.legend(*scatter1.legend_elements(),  title='Target');
+# Add a mean line
+ax1.axhline(y=over_50['thalach'].mean(), linestyle='--');
