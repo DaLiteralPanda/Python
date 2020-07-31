@@ -117,7 +117,7 @@ ax0.axhline(y=over_50['chol'].mean(), linestyle='--');
 # Add data to ax1
 scatter1 = ax1.scatter(x=over_50["age"], y=over_50['thalach'], c=over_50['target']);
 # Customise ax1
-ax1.set(title="Heart Disease and Heart Rate Levels", xlabel="Age", ylabel="Heart Rate");
+ax1.set(title="Heart Disease and Max Heart Rate", xlabel="Age", ylabel="Max Heart Rate");
 # Add a legend
 ax1.legend(*scatter1.legend_elements(),  title='Target');
 # Add a mean line
