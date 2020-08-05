@@ -156,3 +156,51 @@ ax = df.plot(kind='bar')
 ax.set(title="Random Bar Graph from dataframe", xlabel='Row number', ylabel='Random number');
 # Making legend visible
 ax.legend().set_visible(True);
+
+# Set the style
+plt.style.use("seaborn-whitegrid")
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot the data
+scatter = ax.scatter(x=over_50["age"], y=over_50["chol"], c=over_50["target"], cmap='winter'); # This changes the color scheme
+
+# Customize it
+ax.set(title="Heart Disease and Cholesterol Levels", xlabel="Age", ylabel="Cholesterol");
+
+# Add a legend
+ax.legend(*scatter.legend_elements(), title="Target");
+
+# Add a horizantal line
+ax.axhline(over_50["chol"].mean(), linestyle='--', c='violet');
+
+##### Customising the y and x limitations
+### Subplot
+fig, (ax0, ax1) = plt.subplots(nrows=2, ncols=1, figsize=(10, 10), sharex=True);
+
+# Add data to ax0
+scatter = ax0.scatter(x=over_50["age"], y=over_50['chol'], c=over_50['target'], cmap='winter');
+# Customise ax0
+ax0.set(title="Heart Disease and Cholesterol Levels", ylabel="Cholesterol");
+# Change the x axis limits
+ax0.set_xlim([50, 80]);
+# Add a legend
+ax0.legend(*scatter.legend_elements(),  title='Target');
+# Add a mean line
+ax0.axhline(y=over_50['chol'].mean(), linestyle='--', c='pink');
+# Add data to ax1
+scatter1 = ax1.scatter(x=over_50["age"], y=over_50['thalach'], c=over_50['target'], cmap='winter');
+# Customise ax1
+ax1.set(title="Heart Disease and Max Heart Rate", xlabel="Age", ylabel="Max Heart Rate");
+# Change ax1 x axis limit
+ax1.set_xlim([50, 80]);
+ax1.set_ylim([60, 200]);
+# Add a legend to ax1
+ax1.legend(*scatter1.legend_elements(),  title='Target');
+# Add a mean line to ax1
+ax1.axhline(y=over_50['thalach'].mean(), linestyle='--', c='purple');
+
+# Add a title to the figure
+fig.suptitle("Heart Disease Analysis", fontsize=16, fontweight="bold");
+
+fig.savefig("./img/heart_disease_plot.png")
