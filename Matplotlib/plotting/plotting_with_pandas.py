@@ -125,3 +125,34 @@ ax1.axhline(y=over_50['thalach'].mean(), linestyle='--');
 
 # Add a title to the figure
 fig.suptitle("Heart Disease Analysis", fontsize=16, fontweight="bold");
+
+### Customising plots and getting stylish
+
+# See the different styles
+styles_list = list(plt.style.available)
+styles_list
+
+
+car_sales["Price"].plot();
+plt.style.use('seaborn-whitegrid')
+car_sales["Price"].plot();
+plt.style.use('seaborn')
+car_sales["Price"].plot();
+car_sales.plot(x="Odometer (KM)", y="Price", kind='scatter');
+plt.style.use('ggplot')
+car_sales["Price"].plot();
+
+# Create some data
+x = np.random.randn(10, 4)
+df = pd.DataFrame(x, columns=['a', 'b', 'c', 'd'])
+df
+
+ax = df.plot(kind='bar')
+type(ax);
+
+# Customise our plot with set() method
+ax = df.plot(kind='bar')
+# Add some labels
+ax.set(title="Random Bar Graph from dataframe", xlabel='Row number', ylabel='Random number');
+# Making legend visible
+ax.legend().set_visible(True);
