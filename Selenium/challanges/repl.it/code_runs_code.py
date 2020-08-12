@@ -17,7 +17,7 @@ create_repl_btn = browser.find_element_by_xpath("//span[text()='Create repl']")
 create_repl_btn.click()
 
 # Set sleep up to your pc timing
-sleep(8)
+sleep(12)
 
 # Code Lines Element
 code_line = '//div[@class="jsx-2481271225 monaco-editor-plugin"]'
