@@ -1,3 +1,5 @@
+# Run this with hydrogen (an atom package) only i havent tested it with terminal
+
 from selenium import webdriver
 from time import sleep
 
