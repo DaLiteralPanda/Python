@@ -10,7 +10,7 @@ def fname2(x):
 
 fname = lambda x: 2*x
 
-fname2(4)
+fname(4)
 
 # List with numbers 1 to 100
 
@@ -27,4 +27,19 @@ f_list_2
 
 list(f_list_2)
 
-# map(function exprension, )
+# map(function exprension, args)
+
+# 2x^2 + 4x + 4
+
+poly = lambda x:2*x**2 + 4*x + 4
+
+[poly(i) for i in my_list if poly(i) > 50]
+
+# Filter, Map and Lambda
+final_vals = list(filter(lambda x: x > 50, map(lambda x: 2*x**2 + 4*x + 4, my_list)))
+
+
+# Reduce()
+from functools import reduce
+
+reduce(lambda x, y: x+y, final_vals)
